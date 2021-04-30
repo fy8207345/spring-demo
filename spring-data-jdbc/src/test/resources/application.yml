@@ -1,8 +1,12 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/spring-data-jdbc
-    username: root
-    password: root
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/spring-data-jdbc
+#    username: root
+#    password: root
   main:
     allow-bean-definition-overriding: true
+  data:
+    jdbc:
+      repositories:
+        enabled: true

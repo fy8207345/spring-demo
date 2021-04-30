@@ -48,5 +48,10 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId></groupId>
+            <artifactId>querydsl-</artifactId>
+        </dependency>
     </dependencies>
 </project>

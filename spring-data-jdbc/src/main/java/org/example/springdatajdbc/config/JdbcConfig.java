@@ -3,6 +3,7 @@ package org.example.springdatajdbc.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration;
+import org.springframework.data.jdbc.repository.config.EnableJdbcAuditing;
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -17,7 +18,8 @@ public class JdbcConfig extends AbstractJdbcConfiguration {
 
     @Bean
     public NamedParameterJdbcOperations namedParameterJdbcOperations(DataSource dataSource){
-        return new NamedParameterJdbcTemplate(dataSource);
+        NamedParameterJdbcTemplate namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
+        return namedParameterJdbcTemplate;
     }
 
     @Bean
