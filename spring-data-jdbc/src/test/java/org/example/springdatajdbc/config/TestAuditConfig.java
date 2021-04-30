@@ -37,11 +37,12 @@ public class TestAuditConfig {
                 if(idField != null){
                     Class<?> type = idField.getType();
                     IdGenerator<Object, ?> generator = IdGenerationFactory.getGenerator(type);
-                    Object generate = generator.generate(new DefaultGeneratorContext(object, idField));
-                    generatedId.setId(generate);
-                    log.info("id type : {}", type);
+                    if(generator != null){
+                        Object generate = generator.generate(new DefaultGeneratorContext(object, idField));
+                        generatedId.setId(generate);
+                        log.info("id type : {}", type);
+                    }
                 }
-//                generatedId.setId();
             }
         };
     }
