@@ -18,8 +18,7 @@ public class JdbcConfig extends AbstractJdbcConfiguration {
 
     @Bean
     public NamedParameterJdbcOperations namedParameterJdbcOperations(DataSource dataSource){
-        NamedParameterJdbcTemplate namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
-        return namedParameterJdbcTemplate;
+        return new NamedParameterJdbcTemplate(dataSource);
     }
 
     @Bean
