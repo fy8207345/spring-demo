@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="create-table-user" author="liquibase-demo-service">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="user_details"/>
+            </not>
+        </preConditions>
+        <createTable tableName="user_details">
+            <column type="bigint" name="id" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="user_pkey"/>
+            </column>
+            <column type="varchar(250)" name="username">
+                <constraints nullable="false"/>
+            </column>
+            <column type="varchar(250)" name="first_name">
+                <constraints nullable="false"/>
+            </column>
+            <column type="varchar(250)" name="last_name"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

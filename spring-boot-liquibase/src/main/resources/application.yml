@@ -4,11 +4,21 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.mysql.cj.jdbc.MysqlDataSource
   liquibase:
     url: jdbc:mysql://localhost:3306/webflux_angular2?createDatabaseIfNotExist=true
     user: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     default-schema: webflux_angular2
-    change-log: classpath*:liquibase-outputChangeLog.xml
+    change-log: classpath:db/migration/db.changelog-master.xml
+  jpa:
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+    database: mysql
