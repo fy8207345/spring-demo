@@ -1,0 +1,112 @@
+{
+  "snapshot": {
+    "created": "2021-05-24T10:20:51.048",
+    "database": {
+      "productVersion": "2021.1.1",
+      "shortName": "intellijPsiClass",
+      "majorVersion": "0",
+      "minorVersion": "0",
+      "user": "Administrator",
+      "productName": "JPA Buddy Intellij",
+      "url": "jpab?generationContext=661131ef-3c82-41da-9f4d-807c9e4f0a05"
+    },
+    "metadata": {
+      "generationContext": {
+        "dbmsType": "mysql"
+      }
+    },
+    "objects": {
+      "liquibase.structure.core.Catalog": [
+        {
+          "catalog": {
+            "default": true,
+            "name": "JPA_BUDDY",
+            "snapshotId": "2d6e158"
+          }
+        }]
+      ,
+      "liquibase.structure.core.Column": [
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "id",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#2d6e159",
+            "snapshotId": "2d6e161",
+            "type": {
+              "typeName": "BIGINT"
+            }
+          }
+        }]
+      ,
+      "liquibase.structure.core.Index": [
+        {
+          "index": {
+            "columns": [
+              "liquibase.structure.core.Column#2d6e161"]
+            ,
+            "name": "IX_PK_TEST_ENTITY",
+            "snapshotId": "2d6e160",
+            "table": "liquibase.structure.core.Table#2d6e159",
+            "unique": true
+          }
+        }]
+      ,
+      "liquibase.structure.core.PrimaryKey": [
+        {
+          "primaryKey": {
+            "backingIndex": "liquibase.structure.core.Index#2d6e160",
+            "columns": [
+              "liquibase.structure.core.Column#2d6e161"]
+            ,
+            "name": "PK_TEST_ENTITY",
+            "snapshotId": "2d6e162",
+            "table": "liquibase.structure.core.Table#2d6e159"
+          }
+        }]
+      ,
+      "liquibase.structure.core.Schema": [
+        {
+          "schema": {
+            "catalog": "liquibase.structure.core.Catalog#2d6e158",
+            "default": true,
+            "name": "JPA_BUDDY",
+            "snapshotId": "2d6e157"
+          }
+        }]
+      ,
+      "liquibase.structure.core.Table": [
+        {
+          "table": {
+            "columns": [
+              "liquibase.structure.core.Column#2d6e161"]
+            ,
+            "indexes": [
+              "liquibase.structure.core.Index#2d6e160"]
+            ,
+            "name": "test_entity",
+            "primaryKey": "liquibase.structure.core.PrimaryKey#2d6e162",
+            "schema": "liquibase.structure.core.Schema#2d6e157",
+            "snapshotId": "2d6e159"
+          }
+        }]
+      
+    },
+    "snapshotControl": {
+      "snapshotControl": {
+        "includedType": [
+          "liquibase.structure.core.Catalog",
+          "liquibase.structure.core.Column",
+          "liquibase.structure.core.ForeignKey",
+          "liquibase.structure.core.Index",
+          "liquibase.structure.core.PrimaryKey",
+          "liquibase.structure.core.Schema",
+          "liquibase.structure.core.Sequence",
+          "liquibase.structure.core.Table",
+          "liquibase.structure.core.UniqueConstraint",
+          "liquibase.structure.core.View"]
+        
+      }
+    }
+  }
+}
