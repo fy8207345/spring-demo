@@ -12,6 +12,8 @@
         <module>spring-session</module>
         <module>spring-boot-liquibase</module>
         <module>spring-testing</module>
+        <module>reactor-netty-memory-leaks</module>
+        <module>io-nio</module>
     </modules>
     <packaging>pom</packaging>
 

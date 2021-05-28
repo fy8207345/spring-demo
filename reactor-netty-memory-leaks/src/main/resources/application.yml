@@ -1,0 +1,9 @@
+debug: true
+logging:
+  level:
+    root: info
+    reactor.netty: debug
+spring:
+  devtools:
+    restart:
+      enabled: true
