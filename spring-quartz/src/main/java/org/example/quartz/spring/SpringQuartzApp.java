@@ -2,10 +2,13 @@ package org.example.quartz.spring;
 
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+import org.springframework.stereotype.Component;
 
 @Slf4j
 @SpringBootApplication
@@ -20,15 +23,24 @@ public class SpringQuartzApp {
                 .withIdentity("job1", "group1")
                 .build();
         Trigger trigger = TriggerBuilder.newTrigger()
-                .withSchedule(DailyTimeIntervalScheduleBuilder.dailyTimeIntervalSchedule())
+                .withSchedule(SimpleScheduleBuilder.simpleSchedule()
+                .repeatForever().withIntervalInMilliseconds(500))
                 .build();
         scheduler.scheduleJob(jobDetail, trigger);
     }
 
+    @Bean
+    public String string(){
+        return "A String";
+    }
+
+    @Component
     public static class MyJob implements Job{
+        @Autowired
+        private String string;
         @Override
         public void execute(JobExecutionContext context) throws JobExecutionException {
-            log.info("!!!!!job executing : {}", context);
+            log.info("!!!!!job executing : {} - {}", context, string);
         }
     }
 }
