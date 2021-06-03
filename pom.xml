@@ -14,6 +14,7 @@
         <module>spring-testing</module>
         <module>reactor-netty-memory-leaks</module>
         <module>io-nio</module>
+        <module>quartz</module>
     </modules>
     <packaging>pom</packaging>
 
