@@ -4,26 +4,24 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Getter
 @Setter
-@Table(name = "TEST_ENTITY")
+@Table(name = "SUB_ENTITY")
 @Entity
-public class TestEntity {
+public class SubEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
-    private Set<SubEntity> subEntities;
+    private String name;
 
     @Override
     public String toString() {
-        return "TestEntity{" +
+        return "SubEntity{" +
                 "id=" + id +
-                ", subEntities=" + subEntities +
+                ", name='" + name + '\'' +
                 '}';
     }
 }
