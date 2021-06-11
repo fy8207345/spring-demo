@@ -16,6 +16,6 @@ public interface TestEntityRepository extends JpaRepository<TestEntity, Long>,
     @Query("select t from TestEntity t where t.id = ?1")
     TestEntity findFirstById(Long id);
 
-    @Query("select t from TestEntity t join t.subEntities s where s.name like :name")
+    @Query("select distinct t from TestEntity t join t.subEntities s where s.name like :name")
     List<TestEntity> findBySubEntitiesNameLike(@Param("name") String name);
 }

@@ -1,16 +1,19 @@
-import com.fy.liquibase.config.JpaConfig;
+package com.fy.liquibase;
+
 import com.fy.liquibase.entity.SubEntity;
 import com.fy.liquibase.entity.TestEntity;
 import com.fy.liquibase.repository.TestEntityRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@Slf4j
 @DataJpaTest
 public class SubQueryTest {
 
@@ -18,7 +21,7 @@ public class SubQueryTest {
     private TestEntityRepository testEntityRepository;
 
     //测试未通过
-    @org.junit.jupiter.api.Test
+    @Test
     void name() {
         SubEntity subEntity1 = new SubEntity();
         subEntity1.setName("test1");
@@ -47,7 +50,8 @@ public class SubQueryTest {
         testEntityRepository.save(testEntity1);
         testEntityRepository.save(testEntity2);
 
-        List<TestEntity> result = testEntityRepository.findBySubEntitiesNameLike("测试");
-        System.out.println(result);
+        List<TestEntity> result = testEntityRepository.findBySubEntitiesNameLike("%测试%");
+        log.info("result: {}", result);
+        log.info("all: {}", testEntityRepository.findAll());
     }
 }
