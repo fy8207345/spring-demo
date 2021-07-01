@@ -16,6 +16,8 @@
         <module>io-nio</module>
         <module>quartz</module>
         <module>spring-quartz</module>
+        <module>spring-rsocket</module>
+        <module>spring-retrosocket</module>
     </modules>
     <packaging>pom</packaging>
 
