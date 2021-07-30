@@ -1,3 +1,7 @@
 logging:
   level:
-    root: info
+    root: trace
+
+spring:
+  profiles:
+    active: dev,prod
