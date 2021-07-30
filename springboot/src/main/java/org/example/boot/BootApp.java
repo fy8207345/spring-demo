@@ -1,13 +1,16 @@
 package org.example.boot;
 
+import org.example.boot.config.MyEnvironmentPostProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.env.EnvironmentPostProcessor;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.ResourceLoaderAware;
 import org.springframework.context.annotation.EnableLoadTimeWeaving;
+import org.springframework.core.ResolvableType;
 
 @SpringBootApplication
 @EnableLoadTimeWeaving
