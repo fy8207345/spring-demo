@@ -18,6 +18,7 @@
         <module>spring-quartz</module>
         <module>spring-rsocket</module>
         <module>spring-retrosocket</module>
+        <module>springboot</module>
     </modules>
     <packaging>pom</packaging>
 
