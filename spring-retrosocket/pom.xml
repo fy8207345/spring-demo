@@ -19,6 +19,31 @@
         <spring-native.version>0.10.1</spring-native.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>spring-release</id>
+            <name>Spring release</name>
+            <url>https://repo.spring.io/release/</url>
+        </repository>
+
+        <repository>
+            <id>spring-snapshot</id>
+            <name>Spring snapshot</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-release</id>
+            <name>Spring release</name>
+            <url>https://repo.spring.io/plugins-release/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -44,7 +69,7 @@
         <dependency>
             <groupId>org.springframework.retrosocket</groupId>
             <artifactId>spring-retrosocket</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.1-20210625.185141-36</version>
         </dependency>
     </dependencies>
 
@@ -129,25 +154,5 @@
         </profile>
     </profiles>
 
-    <repositories>
-        <repository>
-            <id>spring-release</id>
-            <name>Spring release</name>
-            <url>https://repo.spring.io/plugins-release/</url>
-        </repository>
 
-        <repository>
-            <id>spring-snapshot</id>
-            <name>Spring snapshot</name>
-            <url>https://repo.spring.io/snapshot</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-release</id>
-            <name>Spring release</name>
-            <url>https://repo.spring.io/plugins-release/</url>
-        </pluginRepository>
-    </pluginRepositories>
 </project>
