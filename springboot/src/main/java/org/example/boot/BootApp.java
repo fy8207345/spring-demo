@@ -23,7 +23,9 @@ public class BootApp {
     public static void main(String[] args) {
         ClassLoader classLoader = BootApp.class.getClassLoader();
         System.out.println(classLoader);
-        ConfigurableApplicationContext context = new SpringApplication(null, new Class[]{BootApp.class}).run(args);
+        ConfigurableApplicationContext context =
+                new SpringApplication(null, new Class[]{BootApp.class})
+                .run(args);
         BootApp bean = context.getBean(BootApp.class);
         System.out.println(bean.resourceLoaderAware);
     }
